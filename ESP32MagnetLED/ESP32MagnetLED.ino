@@ -1,3 +1,9 @@
+/*
+OBS!
+FUNGERAR BARA MED VERSION 2.0.17 AV esp 32, Espressif Systems
+OBS!
+*/
+
 #include <Arduino.h>
 
 const int samples = 200;   // antal prov för att etablera baslinje
