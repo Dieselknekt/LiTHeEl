@@ -40,7 +40,5 @@ void loop() {
     showNumber(counter); //Uppdatera LED
     delay(200); //Debounce
     }
-  }
-
   lastButtonState = currentButtonState;
 }
