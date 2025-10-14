@@ -1,8 +1,8 @@
 #include <Arduino.h>
 
-const int ledPin = 5;       // LED på digital pin 5, så vi döper den till ledPin för att slippa komma ihåg själva siffran + lättare att ändra - magic number
-const int buttonPin = 2;    // Tryckknapp på digital pin 2
-bool buttonState = false;   // För att lagra knappens tillstånd
+const int ledPin = 21;       // LED på digital pin 5, så vi döper den till ledPin för att slippa komma ihåg själva siffran + lättare att ändra - magic number
+const int buttonPin = 23;    // Tryckknapp på digital pin 2
+bool buttonPressed = false;   // För att lagra knappens tillstånd
 
 void setup() {
   pinMode(ledPin, OUTPUT);             // Sätt LED som utgång
@@ -13,10 +13,11 @@ void setup() {
 }
 
 void loop() {
-  // Läsa knappen: LOW betyder nedtryckt (pga pull-up)
-  buttonState = (digitalRead(buttonPin) == LOW);
+  // Läs in knappens läge, LOW betyder nedtryckt (pga pull-up)
+  buttonPressed = (digitalRead(buttonPin) == LOW);
 
-  if (buttonState) {
+  //Om knappen är nedtryckt, tänd LED. Annars släck
+  if (buttonPressed) {
     digitalWrite(ledPin, HIGH);
   } else {
     digitalWrite(ledPin, LOW);
